@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="dark:bg-gray-800">
       <Head>
-        <title>Skill Recordings</title>
+        <title>Skill Recordings Inc.</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SkillRecordingsLogo fill={true} className="text-pink-500 p-1 w-full" />
