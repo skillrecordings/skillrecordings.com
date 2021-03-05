@@ -1,0 +1,31 @@
+{
+  "title": "Skill Recordings",
+  "titleTemplate": "%s | Skill Recordings",
+  "description": "working with experts to create effective online education",
+  "favicon": "/favicon.ico",
+  "additionalMetaTags": [
+    {"property": "author", "content": "joel hooks"},
+    {
+      "property": "keywords",
+      "content": ""
+    }
+  ],
+  "twitter": {
+    "cardType": "summary",
+    "site": "skillrecordings"
+  },
+  "openGraph": {
+    "type": "website",
+    "site_name": "Skill Recording's Site",
+    "profile": {
+      "firstName": "Skill"
+    },
+    "images": [
+      {
+        "url": "/images/og.jpg",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  }
+}
