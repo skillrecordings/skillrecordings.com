@@ -11,7 +11,26 @@ export const meta = {
   contributors: [{name: 'Meg Cumby'}],
 }
 
-import {Section, Header, Client, CaseLink} from 'templates/case-study'
+import {
+  Section,
+  Header,
+  Client,
+  CaseLink,
+  ContributorProfileCard,
+} from 'templates/case-study'
+
+export const Aside = () => (
+  <div className="flex md:flex-col flex-col-reverse lg:items-start items-center md:space-y-12">
+    <CaseLink label="EpicReact.dev" url={meta.url} />
+    <Client {...meta.client}>
+      <blockquote className="pt-4 sm:text-lg italic">
+        {`"I'm able to make the biggest impact for my time with SkillRecordings. I
+        absolutely recommend it for anybody who wants to teach and reach a wide
+        audience of people"`}
+      </blockquote>
+    </Client>
+  </div>
+)
 
 <Header
   meta={meta}
@@ -19,7 +38,7 @@ import {Section, Header, Client, CaseLink} from 'templates/case-study'
   className="bg-gradient-to-b to-purple-600 from-indigo-600 text-white sm:pt-56 pt-40 text-center px-5"
 />
 
-<Section containerClassName="bg-blueGray-900" className="text-white" aside={<div className="flex md:flex-col flex-col-reverse lg:items-start items-center md:space-y-12"><CaseLink label="EpicReact.dev" url={meta.url} /><Client {...meta.client}><blockquote className="pt-4 sm:text-lg italic">"I'm able to make the biggest impact for my time with SkillRecordings. I absolutely recommend it for anybody who wants to teach and reach a wide audience of people"</blockquote></Client></div>}>
+<Section containerClassName="bg-blueGray-900" className="text-white" aside={<Aside/>}>
 
 Spending a few years of teaching React through courses, live workshops, and blogposts, Kent realized there was a gap in resources to learn the framework.
 
@@ -37,13 +56,23 @@ And use a whole new workshop structure to get the concepts to stick in people's 
 
 </Section>
 
-<Section containerClassName="bg-blue-50" className="text-blueGray-900">
+<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white">
 
 # 📐 Designing the content
 
 Kent had already designed and delivered several workshops on the Epic React topics he planned to cover, so he had a great foundation to build on already.
 
-He and egghead team member Taylor Bell collaborated in planning sessions in the early stages to flesh out Kent's initial ideas — dialing in the desired learner outcomes, defining what skills they'd come away with to reach those goals, and working out a plan to meet those goals through a series of modules.
+He and egghead team member <span className="text-purple-300 font-bold">Taylor Bell</span> collaborated in planning sessions in the early stages to flesh out Kent's initial ideas — dialing in the desired learner outcomes, defining what skills they'd come away with to reach those goals, and working out a plan to meet those goals through a series of modules.
+
+<ContributorProfileCard
+  name="Taylor Bell"
+  label="Learning Design Support"
+  image={{url: '/epic-react/taylor@2x.jpg'}}
+>
+
+Taylor worked with Kent during the workshop design process to help define the learner outcomes and concepts that would be taught in each of the modules, as well as the plan to achieve those outcomes.
+
+</ContributorProfileCard>
 
 ### Using more 🌎 real-world examples and introducing a 👐🏼 hands-on learning format
 
@@ -71,7 +100,7 @@ Before recording the material, Kent road-tested it a final time with developers 
 
 </Section>
 
-<section className="bg-blue-600 sm:py-32 py-16 min-h-screen flex flex-col items-center justify-center px-5">
+<section className="bg-gradient-to-b from-blueGray-800 to-blueGray-900 sm:py-32 py-16 min-h-screen flex flex-col items-center justify-center px-5">
 <div className="prose sm:prose-xl max-w-screen-md mx-auto text-white">
 
 # 📹 Producing the content with a relentless focus on quality

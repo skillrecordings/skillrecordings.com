@@ -62,7 +62,7 @@ const Header: React.FC<any> = ({meta, headerImage, className}) => {
       <span className="font-medium uppercase tracking-wider bg-gradient-to-r from-indigo-900 to-indigo-800 opacity-75 text-indigo-50 bg-opacity-80 px-3 py-1 rounded-full sm:text-sm text-xs">
         Case Study
       </span>
-      <h1 className="lg:text-6xl sm:text-5xl text-4xl font-extrabold leading-tight tracking-tight py-8">
+      <h1 className="lg:text-7xl sm:text-6xl text-4xl font-extrabold leading-tight tracking-tight py-8">
         {meta.title}
       </h1>
       {headerImage && (
@@ -117,4 +117,34 @@ const CaseLink: React.FC<any> = ({
   )
 }
 
-export {Section, Header, Client, CaseLink}
+const ContributorProfileCard: React.FC<any> = ({
+  image,
+  name,
+  label,
+  children,
+}) => {
+  return (
+    <div className="relative sm:py-16 py-8">
+      <div className=" transform -rotate-3 bg-gradient-to-bl from-purple-600 to-indigo-600 p-8 rounded-lg">
+        <div className="-mt-6 font-medium">{children}</div>
+        <div className="flex items-center">
+          <div className="sm:w-auto w-14 flex items-center">
+            <Image
+              src={image.url}
+              alt={name}
+              width={80}
+              height={80}
+              className="rounded-full"
+            />
+          </div>
+          <div className="pl-4 flex flex-col">
+            <div className="font-bold leading-tight">{name}</div>
+            <div className="text-sm">{label}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export {Section, Header, Client, CaseLink, ContributorProfileCard}
