@@ -47,7 +47,7 @@ const Section: React.FC<SectionProps> = ({
       <div className="flex md:flex-row flex-col-reverse">
         <div className={`${className} ${classNameDefault}`}>{children}</div>
         {aside && (
-          <aside className="space-y-12 md:pl-16 md:max-w-sm md:pb-0 pb-16 flex-shrink-0 flex flex-col sm:items-start items-center">
+          <aside className="space-y-12 md:pl-16 md:max-w-sm md:pb-0 sm:pb-16 pb-8 flex-shrink-0 flex flex-col sm:items-start items-center">
             {aside}
           </aside>
         )}
@@ -79,22 +79,27 @@ const Header: React.FC<any> = ({meta, headerImage, className}) => {
   )
 }
 
-const Client: React.FC<ClientType> = ({image, name, children}) => {
+const Client: React.FC<ClientType> = ({
+  image,
+  name,
+  className = '',
+  children,
+}) => {
   return (
-    <div className="flex flex-col text-white md:items-start items-center md:text-left text-center">
-      <div className="flex items-center text-left">
-        <div className="sm:w-auto w-16">
+    <div className="border border-blueGray-800 rounded-md bg-gradient-to-t bg-purple-300 bg-opacity-10 p-8 flex flex-col text-white md:items-center items-center md:text-left text-center">
+      <div className="flex flex-col items-center text-center">
+        <div className="-mt-16 sm:w-32 sm:h-32 w-16 h-16 border rounded-full border-blueGray-800">
           <Image
-            className="rounded-full bg-purple-400 bg-opacity-50"
+            className="rounded-full bg-blueGray-900"
             src={image.url}
             alt={name}
-            width={100}
-            height={100}
+            width={140}
+            height={140}
           />
         </div>
-        <div className="pl-4">
+        <div className="pt-2">
           <div className="text-purple-200">Client</div>
-          <div className="font-medium text-lg leading-tight">{name}</div>
+          <div className="font-medium text-xl leading-tight">{name}</div>
         </div>
       </div>
       {children}
@@ -105,7 +110,7 @@ const Client: React.FC<ClientType> = ({image, name, children}) => {
 const CaseLink: React.FC<any> = ({
   url,
   label,
-  className = 'md:mt-0 mt-16 inline-flex sm:text-base text-sm items-center text-white px-5 py-3 font-medium bg-gradient-to-tr from-purple-500 to-blue-500 rounded-md group',
+  className = 'sm:mb-8 mb-4 sm:mt-0 mt-8 inline-flex sm:text-base text-sm items-center text-white px-5 py-3 font-medium bg-gradient-to-tr from-purple-500 to-blue-500 rounded-md group',
 }) => {
   return (
     <Link href={url}>

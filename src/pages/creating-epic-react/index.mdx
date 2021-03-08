@@ -20,12 +20,11 @@ import {
 } from 'templates/case-study'
 
 export const Aside = () => (
-  <div className="flex md:flex-col flex-col-reverse lg:items-start items-center md:space-y-12">
+  <div className="flex md:flex-col flex-col-reverse lg:items-center items-center md:space-y-12">
     <CaseLink label="EpicReact.dev" url={meta.url} />
     <Client {...meta.client}>
-      <blockquote className="pt-4 sm:text-lg italic">
-        {`"I'm able to make the biggest impact for my time with SkillRecordings. I
-        absolutely recommend it for anybody who wants to teach and reach a wide
+      <blockquote className="pt-6 text-center sm:text-lg text-blueGray-100 font-serif italic">
+        {`"I'm able to make the biggest impact for my time with Skill Recordings. I absolutely recommend it for anybody who wants to teach and reach a wide
         audience of people"`}
       </blockquote>
     </Client>
@@ -39,6 +38,8 @@ export const Aside = () => (
 />
 
 <Section containerClassName="bg-blueGray-900" className="text-white" aside={<Aside/>}>
+
+### How it all began...
 
 Spending a few years of teaching React through courses, live workshops, and blogposts, Kent realized there was a gap in resources to learn the framework.
 
