@@ -82,13 +82,13 @@ const Header: React.FC<any> = ({meta, headerImage, className}) => {
 const Client: React.FC<ClientType> = ({
   image,
   name,
-  className = '',
+
   children,
 }) => {
   return (
     <div className="border border-blueGray-800 rounded-md bg-gradient-to-t bg-purple-300 bg-opacity-10 p-8 flex flex-col text-white md:items-center items-center md:text-left text-center">
       <div className="flex flex-col items-center text-center">
-        <div className="-mt-16 sm:w-32 sm:h-32 w-16 h-16 border rounded-full border-blueGray-800">
+        <div className="-mt-16 sm:w-32 sm:h-32 w-24 h-24 border rounded-full border-blueGray-800">
           <Image
             className="rounded-full bg-blueGray-900"
             src={image.url}
