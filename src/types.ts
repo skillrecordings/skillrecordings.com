@@ -22,3 +22,10 @@ export type CaseStudyTemplateProps = {
     alt: string
   }
 }
+
+export type ClientType = {
+  name: string
+  image: {
+    url: string
+  }
+}

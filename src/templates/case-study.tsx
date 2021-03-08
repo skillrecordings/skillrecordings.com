@@ -1,7 +1,9 @@
 import * as React from 'react'
 import Layout from 'layouts'
-import {CaseStudyTemplateProps} from 'types'
+import {CaseStudyTemplateProps, ClientType} from 'types'
 import Image from 'next/image'
+import Link from 'next/link'
+import ExternalLink from 'components/icons/external-link'
 
 const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({
   children,
@@ -45,7 +47,7 @@ const Section: React.FC<SectionProps> = ({
       <div className="flex md:flex-row flex-col-reverse">
         <div className={`${className} ${classNameDefault}`}>{children}</div>
         {aside && (
-          <aside className="md:pl-16 md:max-w-sm md:pb-0 pb-16 flex-shrink-0">
+          <aside className="space-y-12 md:pl-16 md:max-w-sm md:pb-0 pb-16 flex-shrink-0 flex flex-col sm:items-start items-center">
             {aside}
           </aside>
         )}
@@ -57,10 +59,10 @@ const Section: React.FC<SectionProps> = ({
 const Header: React.FC<any> = ({meta, headerImage, className}) => {
   return (
     <header className={className}>
-      <span className="font-medium uppercase tracking-wider bg-indigo-900 text-indigo-50 bg-opacity-80 px-3 py-1 rounded-full sm:text-sm text-xs">
+      <span className="font-medium uppercase tracking-wider bg-gradient-to-r from-indigo-900 to-indigo-800 opacity-75 text-indigo-50 bg-opacity-80 px-3 py-1 rounded-full sm:text-sm text-xs">
         Case Study
       </span>
-      <h1 className="lg:text-6xl sm:text-5xl text-4xl font-extrabold tracking-tight py-8">
+      <h1 className="lg:text-6xl sm:text-5xl text-4xl font-extrabold leading-tight tracking-tight py-8">
         {meta.title}
       </h1>
       {headerImage && (
@@ -77,15 +79,15 @@ const Header: React.FC<any> = ({meta, headerImage, className}) => {
   )
 }
 
-const Client: React.FC<any> = ({image, children, name}) => {
+const Client: React.FC<ClientType> = ({image, name, children}) => {
   return (
-    <div className="flex flex-col text-white">
-      <div className="flex items-center">
+    <div className="flex flex-col text-white md:items-start items-center md:text-left text-center">
+      <div className="flex items-center text-left">
         <div className="sm:w-auto w-16">
           <Image
             className="rounded-full bg-purple-400 bg-opacity-50"
             src={image.url}
-            alt={image.alt}
+            alt={name}
             width={100}
             height={100}
           />
@@ -100,4 +102,19 @@ const Client: React.FC<any> = ({image, children, name}) => {
   )
 }
 
-export {Section, Header, Client}
+const CaseLink: React.FC<any> = ({
+  url,
+  label,
+  className = 'md:mt-0 mt-16 inline-flex sm:text-base text-sm items-center text-white px-5 py-3 font-medium bg-gradient-to-tr from-purple-500 to-blue-500 rounded-md group',
+}) => {
+  return (
+    <Link href={url}>
+      <a className={className}>
+        <ExternalLink className="w-5 text-purple-200 group-hover:text-white transition-all ease-in-out duration-200" />
+        <span className="pl-2">Visit {label}</span>
+      </a>
+    </Link>
+  )
+}
+
+export {Section, Header, Client, CaseLink}
