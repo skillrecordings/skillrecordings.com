@@ -16,6 +16,7 @@
     "dotenv-flow": "^3.2.0",
     "emotion": "^10.0.27",
     "emotion-server": "^10.0.27",
+    "mdx-embed": "^0.0.19",
     "mdx-prism": "^0.3.1",
     "next": "10.0.5",
     "next-seo": "^4.19.0",

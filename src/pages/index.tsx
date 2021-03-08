@@ -7,7 +7,6 @@ export default function Home() {
     <div className="dark:bg-gray-800">
       <Head>
         <title>Skill Recordings Inc.</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <SkillRecordingsLogo fill={true} className="text-pink-500 p-1 w-full" />
     </div>

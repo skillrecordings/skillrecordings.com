@@ -1,26 +1,72 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
+
 module.exports = {
-  darkMode: 'class',
+  // darkMode: 'class',
   purge: {
     content: ['./src/**/*.js', './src/**/*.mdx', './src/**/*.tsx'],
-    options: {
-      safelist: ['dark'],
-    },
+    // options: {
+    //   safelist: ['dark'],
+    // },
   },
   theme: {
-    typography: (theme) => ({}),
     extend: {
-      colors: {},
+      colors: {
+        ...colors,
+        gray: {...colors.trueGray, 1000: '#000'},
+        amber: {...colors.amber, 1000: '#331c10'},
+      },
+      fontFamily: {
+        sans: ['Koopman', ...defaultTheme.fontFamily.sans],
+        // display: ['Greycliff', ...defaultTheme.fontFamily.sans],
+        // serif: ['Ahkio', ...defaultTheme.fontFamily.sans],
+      },
       typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            'h1, h2, h3, h4': {
+              color: 'inherit',
+              fontWeight: theme('fontWeight.extrabold'),
+            },
+            strong: {
+              color: 'inherit',
+            },
+            a: {
+              color: 'inherit',
+            },
+            all: 'revert',
+            'ul > li::before': {
+              backgroundColor: theme('colors.amber.400'),
+            },
+            blockquote: {
+              color: 'inherit',
+              borderColor: 'inherit',
+              // borderColor: theme('colors.amber.400'),
+              fontWeight: theme('fontWeight.bold'),
+              lineHeight: theme('lineHeight.normal'),
+              fontStyle: 'normal',
+              fontSize: '120%',
+            },
+            'blockquote > p:first-of-type::before': {
+              content: '""',
+            },
+            'blockquote > p:last-of-type::after': {
+              content: '""',
+            },
+          },
+        },
         dark: {
           css: {
-            color: 'white',
+            a: {
+              color: theme('colors.indigo.300'),
+            },
           },
         },
       }),
     },
   },
   variants: {
-    typography: ['dark'],
+    // typography: ['dark'],
   },
   plugins: [require('@tailwindcss/typography')],
 }

@@ -1,5 +1,14 @@
 const withPlugins = require('next-compose-plugins')
-const withMDX = require('@next/mdx')()
+const withMDX = require('@next/mdx')({
+  options: {
+    remarkPlugins: [
+      // require('remark-slug'),
+      // require('remark-footnotes'),
+      // require('remark-code-titles'),
+    ],
+    rehypePlugins: [require('mdx-prism')],
+  },
+})
 
 const nextConfig = {
   reactStrictMode: true,
