@@ -7,7 +7,7 @@ const Navigation = () => {
     <nav className="absolute left-0 top-0 p-8 w-full flex items-center justify-center">
       <Link href="/">
         <a>
-          <Logo fill={true} className="text-white w-32" />
+          <Logo fill={true} className="text-white sm:w-32 w-28" />
         </a>
       </Link>
     </nav>
