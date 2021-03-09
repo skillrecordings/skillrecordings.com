@@ -31,7 +31,7 @@ type SectionProps = {
 const Section: React.FC<SectionProps> = ({
   title,
   className = 'text-black',
-  classNameDefault = 'prose prose-dark sm:prose-xl max-w-screen-md mx-auto',
+  classNameDefault = 'prose prose-dark sm:prose-xl prose-lg max-w-screen-md mx-auto',
   containerClassName = 'bg-white',
   containerClassNameDefault = 'sm:py-32 py-16 min-h-screen flex items-center justify-center px-5',
   children,
