@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 import {NextSeo} from 'next-seo'
-import {DefaultLayoutProps} from 'types'
+import {DefaultLayoutProps} from '@types'
 import Navigation from 'components/navigation'
 
 const DefaultLayout: FunctionComponent<DefaultLayoutProps> = ({

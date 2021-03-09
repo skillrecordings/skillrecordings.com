@@ -27,7 +27,7 @@ module.exports = {
             fontWeight: theme('fontWeight.light'),
             'h1, h2, h3, h4': {
               color: 'inherit',
-              fontWeight: theme('fontWeight.extrabold'),
+              fontWeight: theme('fontWeight.bold'),
             },
             strong: {
               color: 'inherit',

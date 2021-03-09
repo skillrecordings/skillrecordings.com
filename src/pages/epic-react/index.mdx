@@ -21,6 +21,7 @@ import {
   CaseLink,
   ContributorProfileCard,
 } from 'templates/case-study'
+import WorkflowSteps from 'components/icons/epic-react/workflow-steps'
 
 export const Aside = () => (
   <div className="flex md:flex-col flex-col-reverse lg:items-center items-center md:space-y-12">
@@ -90,6 +91,8 @@ Epic React is also designed to be **a much more hands-on, exercise-driven worksh
 - gives you a coding exercise to do on your own;
 - then walks through the solution in a video and answers questions that you might have come up with while doing the exercise.
 
+<WorkflowSteps />
+
 Going through the workshops, you spend more time with your hands on the keyboard than watching the videos. It's an approach Kent learned in the book _Make it Stick: The Science of Successful Learning._
 
 > “The point is for people to expose themselves to the problem and try to figure out the solution so that they get all the right questions in their minds," says Kent.
@@ -104,8 +107,7 @@ Before recording the material, Kent road-tested it a final time with developers 
 
 </Section>
 
-<section className="bg-gradient-to-b from-blueGray-800 to-blueGray-900 sm:py-32 py-16 min-h-screen flex flex-col items-center justify-center px-5">
-<div className="prose sm:prose-xl max-w-screen-md mx-auto text-white">
+<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white">
 
 # 📹 Producing the content with a relentless focus on quality
 
@@ -121,11 +123,9 @@ We **edited the raw footage for each of the ~350 videos** so they were polished,
 
 **Each video was reviewed by four or five team members** to catch and fix all the small, yet important details — everything from small editing blips through to any UX issues with the flow of the modules. We even had a few egghead community members test out one of the modules to get a fresh perspective on the workflow and make sure we didn't miss anything in the review process. We also took care of ordering and reviewing transcripts to make sure they're accurate.
 
-</div>
-</section>
+</Section>
 
-<section className="bg-blueGray-900 sm:py-32 py-16 min-h-screen flex flex-col items-center justify-center px-5">
-<div className="prose sm:prose-xl max-w-screen-md mx-auto text-white">
+<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white">
 
 # ✨ Making the learning experience delightful with stunning visuals
 
@@ -157,8 +157,7 @@ Maggie provided the guidance and art direction on how to translate Epic React wo
 
 _Examples of the 3D artwork by David Gil and Gustavo Henrique, with Art Direction by Maggie Appleton_
 
-</div>
-</section>
+</Section>
 
 <section className="bg-blueGray-50 sm:py-32 py-16 min-h-screen flex flex-col items-center justify-center px-5">
 <div className="prose sm:prose-xl max-w-screen-md mx-auto text-blueGray-900">
@@ -221,11 +220,12 @@ Pretty much immediately after launch, people who bought Epic React were already 
 
 Take a look at just a handful of the [awesome things people who bought Epic React have to say](https://epicreact.dev/tweets/):
 
-<Tweet tweetLink="denvercoder/status/1311878063286816768" theme="dark" />
-<Tweet tweetLink="jsehull/status/1311821906069209089" theme="dark" />
-<Tweet tweetLink="lizzSoup/status/1311403774041354241" theme="dark" />
-<Tweet tweetLink="dcgoodwin2112/status/1311467223043670022" theme="dark" />
-<Tweet tweetLink="PTolideh/status/1311507868303208449" theme="dark" />
+<div className="grid sm:grid-cols-2 grid-cols-1 gap-5">
+  <Tweet tweetLink="denvercoder/status/1311878063286816768" theme="dark" />
+  <Tweet tweetLink="lizzSoup/status/1311403774041354241" theme="dark" />
+  <Tweet tweetLink="PTolideh/status/1311507868303208449" theme="dark" />
+  <Tweet tweetLink="dcgoodwin2112/status/1311467223043670022" theme="dark" />
+</div>
 
 Kent says he couldn't be happier about how things went with the launch.
 

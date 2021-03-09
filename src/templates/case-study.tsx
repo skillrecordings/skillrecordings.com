@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Layout from 'layouts'
-import {CaseStudyTemplateProps, ClientType} from 'types'
+import {CaseStudyTemplateProps, ClientType} from '@types'
 import Image from 'next/image'
 import Link from 'next/link'
 import ExternalLink from 'components/icons/external-link'
@@ -66,7 +66,7 @@ const Header: React.FC<any> = ({meta, headerImage, className}) => {
         {meta.title}
       </h1>
       {headerImage && (
-        <div className="transform sm:translate-y-24 translate-y-8">
+        <div className="transform sm:translate-y-24 translate-y-8 sm:mx-0 -mx-5">
           <Image
             src={headerImage.url}
             alt={headerImage.alt}
