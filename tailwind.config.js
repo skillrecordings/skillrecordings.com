@@ -24,6 +24,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            fontWeight: theme('fontWeight.light'),
             'h1, h2, h3, h4': {
               color: 'inherit',
               fontWeight: theme('fontWeight.extrabold'),
@@ -42,7 +43,7 @@ module.exports = {
               color: 'inherit',
               borderColor: 'inherit',
               // borderColor: theme('colors.amber.400'),
-              fontWeight: theme('fontWeight.bold'),
+              fontWeight: theme('fontWeight.normal'),
               lineHeight: theme('lineHeight.normal'),
               fontStyle: 'normal',
               fontSize: '120%',

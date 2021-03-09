@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
-Host: undefined
-Sitemap: undefined/sitemap.xml
+
+# Host
+Host: https://skillrecordings.com
+
+# Sitemaps
+Sitemap: https://skillrecordings.com/sitemap.xml
