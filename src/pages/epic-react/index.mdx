@@ -23,6 +23,36 @@ export const meta = {
     url: 'https://skillrecordings.com/epic-react/share-card@2x.png',
   },
   contributors: [{name: 'Meg Cumby'}],
+  toc: [
+    {
+      url: '#designing-the-content',
+      label: 'Designing the content',
+    },
+    {
+      url: '#-producing-the-content-with-a-relentless-focus-on-quality',
+      label: 'Producing the content with a relentless focus on quality',
+    },
+    {
+      url: '#-making-the-learning-experience-delightful-with-stunning-visuals',
+      label: 'Making the learning experience delightful with stunning visuals',
+    },
+    {
+      url: '#-developing-custom-courseware-with-egghead-infrastructure',
+      label: 'Developing custom courseware with egghead infrastructure',
+    },
+    {
+      url: '#-getting-people-excited-about-epic-react',
+      label: 'Getting people excited about Epic React',
+    },
+    {
+      url: '#working-together-in-a-trusted-relationship',
+      label: 'Working together in a trusted relationship',
+    },
+    {
+      url: '#-🥳-launching-epic-react',
+      label: '🚀 🥳 Launching Epic React',
+    },
+  ],
 }
 
 import {
@@ -43,6 +73,24 @@ export const Aside = () => (
       </blockquote>
     </Client>
     <CaseLink label="EpicReact.dev" url={meta.url} />
+    {meta.toc && (
+      <div className="text-white w-full sm:pt-0 py-4">
+        <h4 className="uppercase tracking-wider font-semibold pb-2 text-blueGray-300">
+          Table of contents
+        </h4>
+        <ol className="list-inside">
+          {meta.toc.map((link) => (
+            <li className="py-1 list-decimal">
+              <Link href={link.url}>
+                <a className="cursor-pointer hover:underline font-medium lg:text-xl text-lg">
+                  {link.label}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </div>
+    )}
   </div>
 )
 

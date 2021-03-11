@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {Tweet} from 'mdx-embed'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const TweetWrapper = (props: any) => {
   return (
@@ -14,6 +15,7 @@ const mdxComponents = () => {
   return {
     Tweet: (props: any) => <TweetWrapper {...props} />,
     Image,
+    Link,
   }
 }
 
