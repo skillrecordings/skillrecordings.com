@@ -151,7 +151,7 @@ const ContributorProfileCard: React.FC<{
   return (
     <div className="relative sm:py-12 py-8">
       <div
-        className={`transform ${rotate} bg-gradient-to-bl from-purple-600 to-indigo-600 p-8 rounded-lg`}
+        className={`transform ${rotate} bg-gradient-to-bl from-purple-600 to-indigo-600 sm:p-8 p-6 rounded-lg`}
       >
         <div className="-mt-6 font-medium">{children}</div>
         <div
@@ -182,7 +182,9 @@ const ContributorProfileCard: React.FC<{
           </div>
           <div
             className={`${
-              contributors.length > 1 ? '' : 'sm:pl-4 pl-2'
+              contributors.length > 1
+                ? 'sm:pl-4 pl-0 sm:pt-0 pt-1'
+                : 'sm:pl-4 pl-2'
             } flex flex-col`}
           >
             {contributors && (

@@ -2,7 +2,7 @@ const withPlugins = require('next-compose-plugins')
 const withMDX = require('@next/mdx')({
   options: {
     remarkPlugins: [
-      // require('remark-slug'),
+      require('remark-slug'),
       // require('remark-footnotes'),
       // require('remark-code-titles'),
     ],
