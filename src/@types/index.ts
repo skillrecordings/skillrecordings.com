@@ -23,9 +23,16 @@ export type CaseStudyTemplateProps = {
   }
 }
 
-export type ClientType = {
+export type ClientProps = {
   name: string
+  label: string
   image: {
     url: string
   }
+  links: [
+    {
+      label: string
+      url: string
+    },
+  ]
 }

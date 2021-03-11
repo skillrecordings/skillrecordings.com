@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Layout from 'layouts'
-import {CaseStudyTemplateProps, ClientType} from '@types'
+import {CaseStudyTemplateProps, ClientProps} from '@types'
 import Image from 'next/image'
 import Link from 'next/link'
 import ExternalLink from 'components/icons/external-link'
@@ -31,23 +31,25 @@ type SectionProps = {
 const Section: React.FC<SectionProps> = ({
   title,
   className = 'text-black',
-  classNameDefault = 'prose prose-dark sm:prose-xl prose-lg max-w-screen-md mx-auto',
+  classNameDefault = 'prose prose-dark lg:prose-2xl sm:prose-xl prose-lg max-w-screen-md mx-auto',
   containerClassName = 'bg-white',
   containerClassNameDefault = 'sm:py-32 py-16 min-h-screen flex items-center justify-center px-5',
   children,
-  image,
   aside,
 }) => {
   return (
     <section className={`${containerClassName} ${containerClassNameDefault}`}>
-      {image && (
-        <Image src={image} width={1920} height={1080} alt={title || ''} />
-      )}
-      {title && <h2>{title}</h2>}
-      <div className="flex md:flex-row flex-col-reverse">
-        <div className={`${className} ${classNameDefault}`}>{children}</div>
+      <div className="flex lg:flex-row flex-col-reverse">
+        <div>
+          {title && (
+            <h2 className="text-center lg:text-6xl sm:text-5xl text-4xl font-extrabold text-white sm:pb-24 pb-16">
+              {title}
+            </h2>
+          )}
+          <div className={`${className} ${classNameDefault}`}>{children}</div>
+        </div>
         {aside && (
-          <aside className="space-y-12 md:pl-16 md:max-w-sm md:pb-0 sm:pb-16 pb-8 flex-shrink-0 flex flex-col sm:items-start items-center">
+          <aside className="space-y-12 lg:pl-16 lg:max-w-sm lg:pb-0 sm:pb-16 pb-8 flex-shrink-0 flex flex-col sm:items-start items-center">
             {aside}
           </aside>
         )}
@@ -56,7 +58,7 @@ const Section: React.FC<SectionProps> = ({
   )
 }
 
-const Header: React.FC<any> = ({meta, headerImage, className}) => {
+const Header: React.FC<any> = ({meta, image, className}) => {
   return (
     <header className={className}>
       <span className="font-medium uppercase tracking-wider bg-gradient-to-r from-indigo-900 to-indigo-800 opacity-75 text-indigo-50 bg-opacity-80 px-3 py-1 rounded-full sm:text-sm text-xs">
@@ -65,11 +67,11 @@ const Header: React.FC<any> = ({meta, headerImage, className}) => {
       <h1 className="lg:text-7xl sm:text-6xl text-4xl font-extrabold leading-tight tracking-tight py-8">
         {meta.title}
       </h1>
-      {headerImage && (
+      {image && (
         <div className="transform sm:translate-y-32 translate-y-8 sm:mx-0 -mx-5">
           <Image
-            src={headerImage.url}
-            alt={headerImage.alt}
+            src={image.url}
+            alt={image.alt}
             width={1920 / 1.5}
             height={820 / 1.5}
             quality={100}
@@ -80,16 +82,17 @@ const Header: React.FC<any> = ({meta, headerImage, className}) => {
   )
 }
 
-const Client: React.FC<ClientType> = ({
+const Client: React.FC<ClientProps> = ({
   image,
   name,
-
+  links,
+  label,
   children,
 }) => {
   return (
-    <div className="border border-blueGray-800 rounded-md bg-gradient-to-t bg-purple-300 bg-opacity-10 p-8 flex flex-col text-white md:items-center items-center md:text-left text-center">
+    <div className="relative z-10 border border-blueGray-800 rounded-md bg-gradient-to-t bg-purple-300 bg-opacity-10 p-8 flex flex-col text-white md:items-center items-center md:text-left text-center max-w-screen-md">
       <div className="flex flex-col items-center text-center">
-        <div className="-mt-16 sm:w-32 sm:h-32 w-24 h-24 border rounded-full border-blueGray-800">
+        <div className="-mt-16 sm:w-32 sm:h-32 w-24 h-24 border-2 rounded-full border-indigo-600">
           <Image
             className="rounded-full bg-blueGray-900"
             src={image.url}
@@ -99,11 +102,23 @@ const Client: React.FC<ClientType> = ({
           />
         </div>
         <div className="pt-2">
-          <div className="text-purple-200">Client</div>
           <div className="font-medium text-xl leading-tight">{name}</div>
+          {label && <div className="text-indigo-300">{label}</div>}
         </div>
       </div>
       {children}
+      {links && (
+        <div className="pt-6">
+          {links.map((link, i) => (
+            <span>
+              <a className="" href={link.url}>
+                {link.label}
+              </a>
+              {i + 1 !== links.length && ' ・ '}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
@@ -132,19 +147,19 @@ const ContributorProfileCard: React.FC<{
   contributors: Contributor[]
   label: string
   rotate: string
-}> = ({contributors, label, children, rotate = '-rotate-3'}) => {
+}> = ({contributors, label, children, rotate = 'sm:-rotate-3 -rotate-2'}) => {
   return (
-    <div className="relative sm:py-16 py-8">
+    <div className="relative sm:py-12 py-8">
       <div
         className={`transform ${rotate} bg-gradient-to-bl from-purple-600 to-indigo-600 p-8 rounded-lg`}
       >
         <div className="-mt-6 font-medium">{children}</div>
         <div
-          className={`flex items-center ${
-            contributors.length > 0 ? 'sm:flex-row flex-col' : ''
+          className={`flex sm:items-center ${
+            contributors.length > 1 ? 'sm:flex-row flex-col' : ''
           }`}
         >
-          <div className=" flex items-center">
+          <div className="flex items-center">
             {contributors &&
               contributors.map((contributor: Contributor, i) => {
                 return (
@@ -165,7 +180,11 @@ const ContributorProfileCard: React.FC<{
                 )
               })}
           </div>
-          <div className="pl-4 flex flex-col">
+          <div
+            className={`${
+              contributors.length > 1 ? '' : 'sm:pl-4 pl-2'
+            } flex flex-col`}
+          >
             {contributors && (
               <div className="font-bold leading-tight">
                 {contributors.map((contributor: Contributor, i) => (

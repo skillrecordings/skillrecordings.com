@@ -4,9 +4,20 @@ export const meta = {
   url: `https://epicreact.dev`,
   client: {
     name: 'Kent C. Dodds',
+    label: 'React expert, educator, client',
     image: {
       url: '/epic-react/kent@2x.png',
     },
+    links: [
+      {
+        url: 'https://kentcdodds.com/',
+        label: 'Blog',
+      },
+      {
+        url: 'https://twitter.com/kentcdodds',
+        label: 'Twitter',
+      },
+    ],
   },
   ogImage: {
     url: 'https://skillrecordings.com/epic-react/share-card@2x.png',
@@ -24,20 +35,20 @@ import {
 import WorkflowSteps from 'components/icons/epic-react/workflow-steps'
 
 export const Aside = () => (
-  <div className="flex md:flex-col flex-col-reverse lg:items-center items-center md:space-y-12">
-    <CaseLink label="EpicReact.dev" url={meta.url} />
+  <div className="flex flex-col lg:items-center items-center md:space-y-12">
     <Client {...meta.client}>
       <blockquote className="pt-6 text-center sm:text-lg text-blueGray-100 font-serif italic">
         {`"I'm able to make the biggest impact for my time with Skill Recordings. I absolutely recommend it for anybody who wants to teach and reach a wide
         audience of people"`}
       </blockquote>
     </Client>
+    <CaseLink label="EpicReact.dev" url={meta.url} />
   </div>
 )
 
 <Header
   meta={meta}
-  headerImage={{url: '/epic-react/epic-react-screenshots@2x.png', alt: ''}}
+  image={{url: '/epic-react/epic-react-screenshots@2x.png', alt: ''}}
   className="bg-gradient-to-b to-purple-600 from-indigo-600 text-white sm:pt-56 pt-40 text-center px-5"
 />
 
@@ -61,9 +72,7 @@ And use a whole new workshop structure to get the concepts to stick in people's 
 
 </Section>
 
-<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white">
-
-# 📐 Designing the content
+<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white" title="Designing the content">
 
 Kent had already designed and delivered several workshops on the Epic React topics he planned to cover, so he had a great foundation to build on already.
 
@@ -121,7 +130,7 @@ Finding the energy and the quiet time to **record about 350 videos** with four k
 
 As Kent finished the raw videos, our content production team (Haze Provinsal, Lucas Minter, Cree Provinsal, Zac Jones and Lauro Silva) jumped in to handle the rest of the production and review process to ensure the final product was the absolutely best, most high-quality product possible.
 
-<ContributorProfileCard contributors={[
+<ContributorProfileCard rotate={"rotate-2"} contributors={[
 {
 name: "Zac Jones",
 image: "/team/zac@2x.jpg"
@@ -181,15 +190,20 @@ Vojta Holik, egghead Designer/Developer, worked his magic to present the worksho
 
 </ContributorProfileCard>
 
-<Tweet tweetLink="kentcdodds/status/1236186943420952579" theme="dark" />
+<div className="grid sm:grid-cols-2 grid-cols-1 xl:-mx-16 lg:-mx-10 sm:-mx-5 sm:gap-8 sm:pb-8">
+<div>
 
 > “Vojta is constantly making really awesome things for me to package my stuff in,” says Kent.
 
 "I'm so not a designer. It's like I make this beautiful ice cream sundae and I give it to Vojta in a cardboard box and he swaps out that cardboard box for this beautiful glass bowl to deliver my delicious ice cream in. All of a sudden, that ice cream takes on a whole different meaning. The presentation makes such a difference in your perception of the content as well as your experience in consuming it."
 
+</div>
+<Tweet className="transform -rotate-3" tweetLink="kentcdodds/status/1236186943420952579" theme="dark" />
+</div>
+
 The space theme ties all the visual work together. egghead Art Director Maggie Appleton explains that coming up with a compelling visual theme goes beyond providing a beautiful presentation. It communicates more effectively and gives people the emotional connection to purchase the workshop and to more easily engage and stick with the material.
 
-<ContributorProfileCard rotate={"rotate-2"} contributors={[
+<ContributorProfileCard rotate={"rotate-0"} contributors={[
 {
   name: "Maggie Appleton",
   image: '/team/maggie@2x.jpg'
