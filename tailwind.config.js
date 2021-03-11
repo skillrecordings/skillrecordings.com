@@ -39,6 +39,9 @@ module.exports = {
             'ul > li::before': {
               backgroundColor: theme('colors.amber.400'),
             },
+            'ol > li::before': {
+              color: theme('colors.amber.400'),
+            },
             blockquote: {
               color: 'inherit',
               borderColor: 'inherit',

@@ -70,9 +70,11 @@ Kent had already designed and delivered several workshops on the Epic React topi
 He and egghead team member <span className="text-purple-300 font-bold">Taylor Bell</span> collaborated in planning sessions in the early stages to flesh out Kent's initial ideas — dialing in the desired learner outcomes, defining what skills they'd come away with to reach those goals, and working out a plan to meet those goals through a series of modules.
 
 <ContributorProfileCard
-  name="Taylor Bell"
+  contributors={[{
+    name: "Taylor Bell",
+    image: '/team/taylor@2x.jpg'
+  }]}
   label="Learning Design Support"
-  image={{url: '/epic-react/taylor@2x.jpg'}}
 >
 
 Taylor worked with Kent during the workshop design process to help define the learner outcomes and concepts that would be taught in each of the modules, as well as the plan to achieve those outcomes.
@@ -87,9 +89,9 @@ Isolated, manufactured examples are effective for learning a specific concept wi
 
 Epic React is also designed to be **a much more hands-on, exercise-driven workshop** than Kent's previous recorded material. In each Epic React lesson, Kent:
 
-- introduces the problem briefly in a video;
-- gives you a coding exercise to do on your own;
-- then walks through the solution in a video and answers questions that you might have come up with while doing the exercise.
+1. introduces the problem briefly in a video;
+2. gives you a coding exercise to do on your own;
+3. then walks through the solution in a video and answers questions that you might have come up with while doing the exercise.
 
 <WorkflowSteps />
 
@@ -119,7 +121,34 @@ Finding the energy and the quiet time to **record about 350 videos** with four k
 
 As Kent finished the raw videos, our content production team (Haze Provinsal, Lucas Minter, Cree Provinsal, Zac Jones and Lauro Silva) jumped in to handle the rest of the production and review process to ensure the final product was the absolutely best, most high-quality product possible.
 
+<ContributorProfileCard contributors={[
+{
+name: "Zac Jones",
+image: "/team/zac@2x.jpg"
+},
+{
+name: "Haze Provinsal",
+image: "/team/haze@2x.jpg"
+},
+{
+name: "Lucas Minter",
+image: "/team/lucas@2x.jpg"
+},
+{
+name: "Cree Provinsal",
+image: "/team/cree@2x.jpg"
+},
+{
+name: "Lauro Silva",
+image: "/team/lauro@2x.jpg"
+},
+]}
+label="Content Excellence Team"
+>
+
 We **edited the raw footage for each of the ~350 videos** so they were polished, free of distractions, and delivered the highest value-per-minute possible for the viewer.
+
+</ContributorProfileCard>
 
 **Each video was reviewed by four or five team members** to catch and fix all the small, yet important details — everything from small editing blips through to any UX issues with the flow of the modules. We even had a few egghead community members test out one of the modules to get a fresh perspective on the workflow and make sure we didn't miss anything in the review process. We also took care of ordering and reviewing transcripts to make sure they're accurate.
 
@@ -131,9 +160,26 @@ We **edited the raw footage for each of the ~350 videos** so they were polished,
 
 You can't help but be drawn in by the stunning visual work that's gone into [EpicReact.dev](https://epicreact.dev).
 
-_A look at the stunning site for EpicReact.dev_
+<div className="xl:-mx-16 lg:-mx-10 -mx-5">
+  <Image
+    src="/epic-react/screenshots@2x.png"
+    alt="screenshots of EpicReact.dev site"
+    width={2196}
+    height={2971}
+    quality={100}
+  />
+</div>
+
+<ContributorProfileCard contributors={[{
+  name: "Vojta Holik",
+  image: '/team/vojta@2x.jpg'
+}]}
+label={`UI Design & Development`}
+>
 
 Vojta Holik, egghead Designer/Developer, worked his magic to present the workshop beautifully, inside and out, to make it easy to access and use. He's responsible for pretty much all of the UI/UX design work on the site and in the workshop itself, including all the delightful animations.
+
+</ContributorProfileCard>
 
 <Tweet tweetLink="kentcdodds/status/1236186943420952579" theme="dark" />
 
@@ -143,17 +189,36 @@ Vojta Holik, egghead Designer/Developer, worked his magic to present the worksho
 
 The space theme ties all the visual work together. egghead Art Director Maggie Appleton explains that coming up with a compelling visual theme goes beyond providing a beautiful presentation. It communicates more effectively and gives people the emotional connection to purchase the workshop and to more easily engage and stick with the material.
 
+<ContributorProfileCard rotate={"rotate-2"} contributors={[
+{
+  name: "Maggie Appleton",
+  image: '/team/maggie@2x.jpg'
+},
+{
+  name: "David Gil",
+  image: '/team/david-gil@2x.jpg'
+},
+{
+  name: "Gustavo Henrique",
+  image: '/team/gustavo-henrique@2x.jpg'
+},
+]}
+label={`Art Direction & Illustration`}
+>
+
 Maggie provided the guidance and art direction on how to translate Epic React workshop concepts into visual space metaphors that would be easy to grasp. She brought in the talents of freelance illustrators David Gil and Gustavo Henrique to do the 3D artwork that would be used throughout the workshop material.
 
-<figure className="grid sm:grid-cols-3 grid-cols-1 gap-16">
+</ContributorProfileCard>
 
-![telescope](/epic-react/telescope.png)
-
-![satellite](/epic-react/satellite.png)
-
-![rocket](/epic-react/rocket.png)
-
-</figure>
+<div className="sm:-mx-10">
+  <Image
+    src="/epic-react/illustrations@2x.png"
+    alt="some illustrations from EpicReact.dev"
+    width={1167}
+    height={1149}
+    quality={100}
+  />
+</div>
 
 _Examples of the 3D artwork by David Gil and Gustavo Henrique, with Art Direction by Maggie Appleton_
 

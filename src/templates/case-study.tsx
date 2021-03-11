@@ -66,12 +66,13 @@ const Header: React.FC<any> = ({meta, headerImage, className}) => {
         {meta.title}
       </h1>
       {headerImage && (
-        <div className="transform sm:translate-y-24 translate-y-8 sm:mx-0 -mx-5">
+        <div className="transform sm:translate-y-32 translate-y-8 sm:mx-0 -mx-5">
           <Image
             src={headerImage.url}
             alt={headerImage.alt}
-            width={1920 / 2}
-            height={820 / 2}
+            width={1920 / 1.5}
+            height={820 / 1.5}
+            quality={100}
           />
         </div>
       )}
@@ -122,28 +123,61 @@ const CaseLink: React.FC<any> = ({
   )
 }
 
-const ContributorProfileCard: React.FC<any> = ({
-  image,
-  name,
-  label,
-  children,
-}) => {
+type Contributor = {
+  name: string
+  image: string
+}
+
+const ContributorProfileCard: React.FC<{
+  contributors: Contributor[]
+  label: string
+  rotate: string
+}> = ({contributors, label, children, rotate = '-rotate-3'}) => {
   return (
     <div className="relative sm:py-16 py-8">
-      <div className=" transform -rotate-3 bg-gradient-to-bl from-purple-600 to-indigo-600 p-8 rounded-lg">
+      <div
+        className={`transform ${rotate} bg-gradient-to-bl from-purple-600 to-indigo-600 p-8 rounded-lg`}
+      >
         <div className="-mt-6 font-medium">{children}</div>
-        <div className="flex items-center">
-          <div className="sm:w-auto w-14 flex items-center">
-            <Image
-              src={image.url}
-              alt={name}
-              width={80}
-              height={80}
-              className="rounded-full"
-            />
+        <div
+          className={`flex items-center ${
+            contributors.length > 0 ? 'sm:flex-row flex-col' : ''
+          }`}
+        >
+          <div className=" flex items-center">
+            {contributors &&
+              contributors.map((contributor: Contributor, i) => {
+                return (
+                  <div
+                    className={`
+                    sm:w-auto w-16 flex rounded-full border-4 border-indigo-600
+                    ${contributors.length > 0 && i !== 0 ? '-ml-5 ' : ''}`}
+                    style={{zIndex: i}}
+                  >
+                    <Image
+                      src={contributor.image}
+                      alt={contributor.name}
+                      width={80}
+                      height={80}
+                      className="rounded-full "
+                    />
+                  </div>
+                )
+              })}
           </div>
           <div className="pl-4 flex flex-col">
-            <div className="font-bold leading-tight">{name}</div>
+            {contributors && (
+              <div className="font-bold leading-tight">
+                {contributors.map((contributor: Contributor, i) => (
+                  <span>
+                    {contributor.name}
+                    {contributors.length > 0 &&
+                      i + 1 !== contributors.length &&
+                      ', '}
+                  </span>
+                ))}
+              </div>
+            )}
             <div className="text-sm">{label}</div>
           </div>
         </div>
