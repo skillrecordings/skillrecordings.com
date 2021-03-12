@@ -3,7 +3,8 @@ import Layout from 'layouts'
 import {CaseStudyTemplateProps, ClientProps} from '@types'
 import Image from 'next/image'
 import Link from 'next/link'
-import ExternalLink from 'components/icons/external-link'
+import slugify from 'slugify'
+import ExternalLinkIcon from 'components/icons/external-link'
 
 const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({
   children,
@@ -42,7 +43,10 @@ const Section: React.FC<SectionProps> = ({
       <div className="flex lg:flex-row flex-col-reverse">
         <div>
           {title && (
-            <h2 className="text-center lg:text-6xl sm:text-5xl text-4xl font-extrabold text-white sm:pb-24 pb-16">
+            <h2
+              id={slugify(title, {lower: true})}
+              className="max-w-screen-lg text-center lg:text-6xl sm:text-5xl text-4xl font-extrabold text-white sm:pb-24 pb-16"
+            >
               {title}
             </h2>
           )}
@@ -131,7 +135,7 @@ const CaseLink: React.FC<any> = ({
   return (
     <Link href={url}>
       <a className={className}>
-        <ExternalLink className="w-5 text-purple-200 group-hover:text-white transition-all ease-in-out duration-200" />
+        <ExternalLinkIcon className="w-5 text-purple-200 group-hover:text-white transition-all ease-in-out duration-200" />
         <span className="pl-2">Visit {label}</span>
       </a>
     </Link>

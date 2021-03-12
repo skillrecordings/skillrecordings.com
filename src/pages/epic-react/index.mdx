@@ -25,15 +25,19 @@ export const meta = {
   contributors: [{name: 'Meg Cumby'}],
   toc: [
     {
+      url: '#how-it-all-began',
+      label: 'How it all began',
+    },
+    {
       url: '#designing-the-content',
       label: 'Designing the content',
     },
     {
-      url: '#-producing-the-content-with-a-relentless-focus-on-quality',
+      url: '#producing-the-content-with-a-relentless-focus-on-quality',
       label: 'Producing the content with a relentless focus on quality',
     },
     {
-      url: '#-making-the-learning-experience-delightful-with-stunning-visuals',
+      url: '#making-the-learning-experience-delightful-with-stunning-visuals',
       label: 'Making the learning experience delightful with stunning visuals',
     },
     {
@@ -80,9 +84,9 @@ export const Aside = () => (
         </h4>
         <ol className="list-inside">
           {meta.toc.map((link) => (
-            <li className="py-1 list-decimal">
+            <li className="py-2 list-decimal">
               <Link href={link.url}>
-                <a className="cursor-pointer hover:underline font-medium lg:text-xl text-lg">
+                <a className="cursor-pointer hover:underline lg:text-xl text-lg leading-tight">
                   {link.label}
                 </a>
               </Link>
@@ -166,9 +170,7 @@ Before recording the material, Kent road-tested it a final time with developers 
 
 </Section>
 
-<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white">
-
-# 📹 Producing the content with a relentless focus on quality
+<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white" title="Producing the content with a relentless focus on quality">
 
 With the content solidified and improvements made based on the learner feedback he received, Kent turned his attention to recording.
 
@@ -211,9 +213,7 @@ We **edited the raw footage for each of the ~350 videos** so they were polished,
 
 </Section>
 
-<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white">
-
-# ✨ Making the learning experience delightful with stunning visuals
+<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white" title="Making the learning experience delightful with stunning visuals">
 
 You can't help but be drawn in by the stunning visual work that's gone into [EpicReact.dev](https://epicreact.dev).
 
@@ -234,7 +234,7 @@ You can't help but be drawn in by the stunning visual work that's gone into [Epi
 label={`UI Design & Development`}
 >
 
-Vojta Holik, egghead Designer/Developer, worked his magic to present the workshop beautifully, inside and out, to make it easy to access and use. He's responsible for pretty much all of the UI/UX design work on the site and in the workshop itself, including all the delightful animations.
+Vojta Holik worked his magic to present the workshop beautifully, inside and out, to make it easy to access and use. He's responsible for pretty much all of the UI/UX design work on the site and in the workshop itself, including all the delightful animations.
 
 </ContributorProfileCard>
 
