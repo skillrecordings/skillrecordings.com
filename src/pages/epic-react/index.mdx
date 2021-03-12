@@ -41,11 +41,11 @@ export const meta = {
       label: 'Making the learning experience delightful with stunning visuals',
     },
     {
-      url: '#-developing-custom-courseware-with-egghead-infrastructure',
+      url: '#developing-custom-courseware-with-egghead-infrastructure',
       label: 'Developing custom courseware with egghead infrastructure',
     },
     {
-      url: '#-getting-people-excited-about-epic-react',
+      url: '#getting-people-excited-about-epic-react',
       label: 'Getting people excited about Epic React',
     },
     {
@@ -55,6 +55,14 @@ export const meta = {
     {
       url: '#-🥳-launching-epic-react',
       label: '🚀 🥳 Launching Epic React',
+    },
+  ],
+  contributors: [
+    {
+      name: 'Meg Cumby',
+      label: 'Author of the case study',
+      image: '/team/meg-cumby@2x.png',
+      link: 'https://megcumby.com/',
     },
   ],
 }
@@ -97,6 +105,34 @@ export const Aside = () => (
     )}
   </div>
 )
+
+export const Contributors = () => {
+  return (
+    <footer className="flex items-center justify-center bg-blueGray-900 text-white py-24">
+      <div className="max-w-screen-md">
+        {meta.contributors.map((person) => {
+          return (
+            <a href={person.link} className="flex items-center group">
+              <Image
+                className="rounded-full"
+                src={person.image}
+                alt={person.name}
+                width={64}
+                height={64}
+              />
+              <div className="flex flex-col sm:pl-3 pl-2">
+                <div>{'Written by'}</div>
+                <div className="sm:text-xl text-lg font-medium group-hover:underline">
+                  {person.name}
+                </div>
+              </div>
+            </a>
+          )
+        })}
+      </div>
+    </footer>
+  )
+}
 
 <Header
   meta={meta}
@@ -286,10 +322,8 @@ _Examples of the 3D artwork by David Gil and Gustavo Henrique, with Art Directio
 
 </Section>
 
-<section className="bg-blueGray-50 sm:py-32 py-16 min-h-screen flex flex-col items-center justify-center px-5">
-<div className="prose sm:prose-xl max-w-screen-md mx-auto text-blueGray-900">
-
-# 💻 Developing custom courseware with egghead infrastructure
+<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white" title="Developing custom courseware with egghead infrastructure
+">
 
 We handled all the development and infrastructure work for Epic React, with egghead's Joel Hooks serving as the technical architect and lead developer and Ian Jones supporting the back-end development.
 
@@ -297,13 +331,9 @@ We built the Epic React site using Gatsby and MDX, with egghead's infrastructure
 
 However, Epic React's new structure required us to do some clever workarounds with the tech for content delivery — pulling the right content needed and keep track of user progress in a way that made sense, without having to do a database overhaul or essentially inventing new technology. We essentially developed bespoke courseware to provide the instructor led hands-on learning experience with extreme depth.
 
-</div>
-</section>
+</Section>
 
-<section className="bg-orange-50 sm:py-32 py-16 min-h-screen flex flex-col items-center justify-center px-5">
-<div className="prose prose-amber sm:prose-xl max-w-screen-md mx-auto text-black">
-
-# 📣 Getting people excited about Epic React
+<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white" title="Getting people excited about Epic React" titleClassName="max-w-screen-md">
 
 As Epic React got closer to being ready to launch, we set out a marketing strategy and handled details for Kent such as setting up a mailing list sign up, writing and updating site copy, creating social share images, setting out the launch discounts and their timing, and collaborating with him to create and execute a launch plan to give people a chance to get excited about the release. We helped him plan out the articles and emails he'd write to share React tips and tricks and give people a taste of what's in the course.
 
@@ -311,13 +341,9 @@ As Epic React got closer to being ready to launch, we set out a marketing strate
 
 Kent puts a lot of additional effort to get people excited about Epic React and to answer people's questions about it and about React more generally — from livestreams to office hours to being very active on Twitter. He's also done a lot of community building, creating the [KCD Discord](https://kentcdodds.com/discord) for developers to interact with each other in a friendly and positive environment as they learn (whether it's Kent material or something else) and facilitating group learning opportunities with [Learning Clubs](https://kentcdodds.com/clubs).
 
-</div>
-</section>
+</Section>
 
-<section className="bg-teal-50 sm:py-32 py-16 min-h-screen flex flex-col items-center justify-center px-5">
-<div className="prose sm:prose-xl max-w-screen-md mx-auto text-black">
-
-# Working together in a trusted relationship
+<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white" title="Working together in a trusted relationship" titleClassName="max-w-screen-md">
 
 Collaborating on a launch like this requires a trusted relationship and making well-researched decisions that will help achieve the goal of creating a successful product that has a huge reach and impact.
 
@@ -325,13 +351,9 @@ Kent puts an incredible amount of work to improve the lives of thousands develop
 
 > “egghead's constantly helping me overcome obstacles," he says. "If I have a question or need anything, I just ask. Joel will either convince me that I don't actually need it — which happens often and I don't mind, because he's normally right. Or he and the team will just get it for me.”
 
-</div>
-</section>
+</Section>
 
-<section className="bg-blueGray-900 sm:py-32 py-16 min-h-screen flex flex-col items-center justify-center px-5">
-<div className="prose sm:prose-xl max-w-screen-md mx-auto text-white">
-
-# 🚀 🥳 Launching Epic React
+<Section containerClassName="bg-gradient-to-t from-blueGray-900 to-blueGray-800" className="text-white" title="🚀 🥳 Launching Epic React">
 
 Epic React's release was the result of a ton of planning, care and attention being put into the important details — large and small — across every part of the experience.
 
@@ -368,8 +390,9 @@ Kent points to the synergistic relationship with egghead to be able to accomplis
 
 > “I feel I'm a much better instructor because I don't have to deal with all that extra stuff that doesn't have anything to do with teaching people React,” says Kent. “The end product is way better than what egghead or I could have done individually. **We end up having way more success and being way more successful at getting people to learn.”**
 
-</div>
-</section>
+</Section>
+
+<Contributors />
 
 import CaseStudyTemplate from 'templates/case-study'
 

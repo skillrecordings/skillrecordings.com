@@ -23,6 +23,8 @@ type SectionProps = {
   className?: string
   classNameDefault?: string
   title?: string
+  titleClassName?: string
+  titleClassNameDefault?: string
   containerClassName?: string
   containerClassNameDefault?: string
   image?: string
@@ -35,6 +37,8 @@ const Section: React.FC<SectionProps> = ({
   classNameDefault = 'prose prose-dark lg:prose-2xl sm:prose-xl prose-lg max-w-screen-md mx-auto',
   containerClassName = 'bg-white',
   containerClassNameDefault = 'sm:py-32 py-16 min-h-screen flex items-center justify-center px-5',
+  titleClassName = 'max-w-screen-lg',
+  titleClassNameDefault = 'text-center lg:text-6xl sm:text-5xl text-4xl font-extrabold text-white sm:pb-24 pb-16',
   children,
   aside,
 }) => {
@@ -45,7 +49,7 @@ const Section: React.FC<SectionProps> = ({
           {title && (
             <h2
               id={slugify(title, {lower: true})}
-              className="max-w-screen-lg text-center lg:text-6xl sm:text-5xl text-4xl font-extrabold text-white sm:pb-24 pb-16"
+              className={`${titleClassName} ${titleClassNameDefault}`}
             >
               {title}
             </h2>
